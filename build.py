@@ -22,13 +22,15 @@ import re, os, glob, datetime, json, html as _html
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 # ============================ CONFIG (the launch switch) =====================
-LIVE = False                                              # flip True at launch
+LIVE = True                                               # flip True at launch
 BASE_LIVE    = "https://thesalsal.org"
 BASE_PREVIEW = "https://mia8989.github.io/salsal-homepage-v5"
 SITE = BASE_LIVE if LIVE else BASE_PREVIEW
 KNOWN_BASES = [BASE_LIVE, BASE_PREVIEW]                   # rebased -> SITE
 # pages that must stay out of search even when LIVE (relative dir):
-ALWAYS_NOINDEX = {"sponsorship-packages"}
+ALWAYS_NOINDEX = {"sponsorship-packages", "become-a-sponsor", "get-resources"}
+# Google Analytics 4 (stamped into every page's <head>)
+GA_ID = "G-8XKSXE02VL"
 # ============================================================================
 
 def read(p):
@@ -42,6 +44,14 @@ RE_NAV  = re.compile(r"<!-- NAV:START -->.*?<!-- NAV:END -->", re.S)
 RE_FOOT = re.compile(r"<!-- FOOTER:START -->.*?<!-- FOOTER:END -->", re.S)
 RE_SEO  = re.compile(r"\n?[ \t]*<!-- SEO:START -->.*?<!-- SEO:END -->\n?", re.S)
 RE_ROBOTS = re.compile(r'[ \t]*<meta\s+name="robots"[^>]*>\n?', re.I)
+RE_GA = re.compile(r'\n?[ \t]*<!-- GA:START -->.*?<!-- GA:END -->\n?', re.S)
+GA_BLOCK = (
+    "\n  <!-- GA:START -->\n"
+    f'  <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>\n'
+    "  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}"
+    f"gtag('js',new Date());gtag('config','{GA_ID}');</script>\n"
+    "  <!-- GA:END -->"
+)
 
 def base_for(path):
     rel = os.path.relpath(path, HERE)
@@ -170,6 +180,10 @@ for path in sorted(glob.glob(os.path.join(HERE, "**", "*.html"), recursive=True)
     # strip old SEO block + any raw robots meta, then stamp fresh SEO block after </title>
     html = RE_SEO.sub("\n", html)
     html = RE_ROBOTS.sub("", html)
+
+    # GA4: strip any existing block, then stamp once right after <head>
+    html = RE_GA.sub("", html)
+    html = re.sub(r"(<head[^>]*>)", lambda m: m.group(1) + GA_BLOCK, html, count=1)
     tm = re.search(r"<title>(.*?)</title>", html, re.S)
     leaf = _html.unescape(re.split(r"\s*\|\s*", tm.group(1).strip())[0]) if tm else "Page"
     wschema = webinar_schema(path, html, leaf)
@@ -187,6 +201,10 @@ urls = []
 for p in sorted(indexable, key=clean_url):
     mtime = datetime.date.fromtimestamp(os.path.getmtime(p)).isoformat()
     urls.append(f"  <url><loc>{clean_url(p)}</loc><lastmod>{mtime}</lastmod></url>")
+# downloadable PDFs in assets/docs (TOBA flyers etc.) so search and AI crawlers index them too
+for p in sorted(glob.glob(os.path.join(HERE, "assets", "docs", "*.pdf"))):
+    mtime = datetime.date.fromtimestamp(os.path.getmtime(p)).isoformat()
+    urls.append(f"  <url><loc>{SITE}/{os.path.relpath(p, HERE)}</loc><lastmod>{mtime}</lastmod></url>")
 sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
            + "\n".join(urls) + "\n</urlset>\n")

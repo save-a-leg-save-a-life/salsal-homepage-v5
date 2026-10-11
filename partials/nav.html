@@ -7,6 +7,8 @@
     border:1px solid rgba(28,53,87,.08);border-radius:18px;box-shadow:0 10px 30px rgba(16,35,59,.09);
     display:flex;align-items:center;gap:22px;padding:10px 14px 10px 20px;}
   .navwrap .logo{height:44px;display:block;}
+  .navwrap .logo-link{position:relative;display:inline-block;margin-right:14px;}
+  .navwrap .logo-tm{position:absolute;top:0;right:-13px;font:700 12px/1 Inter,sans-serif;color:#1C3557;}
   .navwrap .links{display:flex;gap:20px;align-items:center;margin-left:6px;}
   .navwrap .links > a,.navwrap .ddt{font-weight:600;font-size:14.5px;color:#1C3557;white-space:nowrap;position:relative;padding:6px 0;cursor:pointer;text-decoration:none;}
   .navwrap .links > a::after{content:'';position:absolute;left:0;right:100%;bottom:0;height:2px;background:#E63947;transition:right .25s;}
@@ -68,7 +70,7 @@
 </style>
 <div class="navwrap">
   <nav class="nav">
-    <a href="{{HOME}}" class="logo-link"><img class="logo" src="{{B}}assets/logo.png" alt="Save a Leg, Save a Life Foundation"></a>
+    <a href="{{HOME}}" class="logo-link"><img class="logo" src="{{B}}assets/logo.png" alt="Save a Leg, Save a Life Foundation"><sup class="logo-tm" aria-hidden="true">&reg;</sup></a>
     <div class="links">
       <div class="dd">
         <span class="ddt">About <span class="caret">&#9662;</span></span>
@@ -93,8 +95,8 @@
         <div class="ddmenu">
           <a class="ddi" href="{{B}}community-screening-events/"><b>Screening &amp; Events</b><span>Free community screenings</span></a>
           <a class="ddi" href="{{B}}register-community-screening/"><b>Request an Event</b><span>Bring a free screening to your community</span></a>
-          <a class="ddi" href="{{B}}white-sock-campaign/"><b>The White Sock Campaign</b><span>Take the pledge for PAD Awareness Month</span></a>
-          <a class="ddi" href="{{B}}toba/"><b>TOBA</b><span>Time Out Before Amputation</span></a>
+          <a class="ddi" href="{{B}}white-sock-campaign/"><b>The White Sock Campaign&trade;</b><span>Take the pledge for PAD Awareness Month</span></a>
+          <a class="ddi" href="{{B}}toba/"><b>TOBA</b><span>Time Out Before Amputation&reg;</span></a>
           <a class="ddi" href="{{B}}advocacy/"><b>Advocacy</b><span>Policy reform for limb preservation</span></a>
           <a class="ddi" href="{{B}}scholarship/"><b>Scholarship</b><span>Harold L. Johnson Memorial Scholarship</span></a>
           <a class="ddi" href="{{B}}patient-assistance/"><b>Patient Assistance</b><span>Shoes, supplies, and mobility aids for patients in need</span></a>
@@ -110,7 +112,7 @@
       <span class="ddt donate-btn">Donate <span class="caret">&#9662;</span></span>
       <div class="ddmenu">
         <a class="ddi" href="{{B}}donate/"><b>Donate</b><span>Give directly to limb preservation</span></a>
-        <a class="ddi" href="{{B}}donate/#supporter"><b>Become a Supporter</b><span>$49/year, certificate + lapel pin</span></a>
+        <a class="ddi" href="https://buy.stripe.com/8x2bJ1bkUcJK1OB8xx2ZO00?locale=en&amp;__embed_source=buy_btn_1Sag70GxDRqsdW1LoxKqDChI" target="_blank" rel="noopener"><b>Become a Supporter</b><span>$49/year, certificate + lapel pin</span></a>
         <a class="ddi" href="{{B}}shop/"><b>Donate by Shopping</b><span>Every purchase funds the mission</span></a>
       </div>
     </div>
@@ -128,9 +130,12 @@
       <a href="{{B}}upcoming-webinars/">Upcoming Webinars</a>
       <div class="mh">Impact</div>
       <a href="{{B}}community-screening-events/">Screening &amp; Events</a>
-      <a href="{{B}}white-sock-campaign/">The White Sock Campaign</a>
+      <a href="{{B}}register-community-screening/">Request an Event</a>
+      <a href="{{B}}white-sock-campaign/">The White Sock Campaign&trade;</a>
       <a href="{{B}}toba/">TOBA</a>
       <a href="{{B}}advocacy/">Advocacy</a>
+      <a href="{{B}}scholarship/">Scholarship</a>
+      <a href="{{B}}patient-assistance/">Patient Assistance</a>
       <div class="mh">Get Involved</div>
       <a href="{{B}}get-involved/">Get Involved</a>
       <a href="{{B}}sponsorship/">Sponsorship</a>
