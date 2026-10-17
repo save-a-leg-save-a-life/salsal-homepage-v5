@@ -296,9 +296,24 @@
       .tobapix img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center;border-radius:14px;box-shadow:0 3px 10px rgba(16,35,59,.12);background:#e7eef5;}
       .tobapix figcaption{text-align:center;font-size:12.5px;font-weight:700;color:var(--sky);text-transform:uppercase;letter-spacing:.05em;margin-top:10px;}
       @media(max-width:760px){.tobapix{grid-template-columns:1fr;}}
+      .tobavid{display:grid;grid-template-columns:1fr 320px;gap:44px;align-items:center;max-width:1000px;margin:0 auto 56px;}
+      .tobavid .vtext h3{font-size:clamp(24px,2.6vw,32px);margin:6px 0 14px;}
+      .tobavid .vtext p{color:#4a5d72;font-size:16.5px;line-height:1.6;}
+      .tobavid video{display:block;width:100%;aspect-ratio:9/16;border-radius:18px;background:#0b1a2c;box-shadow:0 2px 8px rgba(28,53,87,.10),0 20px 48px rgba(16,35,59,.18);}
+      @media(max-width:820px){.tobavid{grid-template-columns:1fr;gap:26px;}.tobavid video{max-width:300px;margin:0 auto;}}
     </style>
     <div class="wrap">
       <div class="band-head reveal"><span class="eyebrow" style="justify-content:center;"><span class="dot"></span> Advancing the approach</span><h2>TOBA, out in the field</h2></div>
+      <div class="tobavid reveal">
+        <div class="vtext">
+          <span class="eyebrow"><span class="dot"></span> Watch</span>
+          <h3>Why TOBA matters, in under a minute</h3>
+          <p>Up to half of patients receive no vascular test before a lower-extremity amputation. Hear how Time Out Before Amputation gives every patient access to the same care, and how existing technology can reduce the likelihood of an amputation.</p>
+        </div>
+        <video controls playsinline preload="none" poster="../assets/video/toba-trailer-poster.jpg" aria-label="Video: Time Out Before Amputation explained, with captions">
+          <source src="../assets/video/toba-trailer.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="tobapix reveal">
         <figure><img src="../assets/photos/toba/toba-03.jpg" alt="SALSAL presenting the Time Out Before Amputation research poster" loading="lazy"><figcaption>The TOBA poster</figcaption></figure>
         <figure><img src="../assets/photos/toba/toba-02.jpg" alt="SALSAL community amputation prevention screening research" loading="lazy"><figcaption>Prevention research</figcaption></figure>
