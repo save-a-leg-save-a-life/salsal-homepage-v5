@@ -572,6 +572,15 @@
       <div class="slide on"><div class="bg" style="background-image:url('assets/salsal-foundation-team.jpg');background-position:50% 40%"></div></div>
       <div class="slide">
         <div class="spkpanel">
+          <div class="ph"><span class="playbig">&#9654;</span> Upcoming &middot; Nov 4</div>
+          <div class="spkpanel-grid" style="grid-template-columns:repeat(2,1fr);max-width:74%;margin:0 auto;">
+            <figure><span class="sp" style="background-image:url('assets/speakers/brooke-bisbee.jpg')"></span><b>Dr. Brooke Bisbee, DPM</b><i>Speaker</i></figure>
+            <figure><span class="sp" style="background-image:url('assets/speakers/david-alper.jpg')"></span><b>Dr. David Alper, DPM</b><i>Moderator</i></figure>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="spkpanel">
           <div class="ph"><span class="playbig">&#9654;</span> On demand &middot; PAD recognition</div>
           <div class="spkpanel-grid">
             <figure><span class="sp" style="background-image:url('assets/speakers/anuj-shah.jpg')"></span><b>Dr. Anuj R. Shah</b><i>Speaker</i></figure>
@@ -606,12 +615,18 @@
       <div class="vig"></div>
       <span class="ph-tag" id="phtag"><span class="live"></span> Community screening &middot; 2026</span>
       <div class="evcard" id="evcard">
-        <div class="pg"><i class="on"></i><i></i><i></i><i></i></div>
+        <div class="pg"><i class="on"></i><i></i><i></i><i></i><i></i></div>
         <div class="ev on">
           <span class="evtag scr">Free Screening</span>
           <h3>Find a free limb screening near you</h3>
           <div class="meta">Early detection saves limbs</div>
           <a class="go">See screening events <span class="arw">&rsaquo;</span></a>
+        </div>
+        <div class="ev">
+          <span class="evtag web">Upcoming Webinar</span>
+          <h3>Nails, Corns, and Calluses, Oh My!</h3>
+          <div class="meta">Nov 4, 2026 &middot; 7:00 PM ET &middot; free</div>
+          <a class="go" href="webinars/nails-corns-calluses/">Register free <span class="arw">&rsaquo;</span></a>
         </div>
         <div class="ev">
           <span class="evtag web">On-Demand Webinar</span>
@@ -954,7 +969,7 @@
   const evs=[...document.querySelectorAll('#evcard .ev')];
   const pgs=[...document.querySelectorAll('#evcard .pg i')];
   const phtag=document.getElementById('phtag');
-  const caps=['<span class="live"></span> Community screening &middot; 2026','','',''];
+  const caps=['<span class="live"></span> Community screening &middot; 2026','','','',''];
   let i=0, timer=null;
   function show(n){
     i=(n+slides.length)%slides.length;
