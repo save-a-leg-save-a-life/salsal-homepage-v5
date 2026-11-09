@@ -16,7 +16,7 @@
   <meta name="robots" content="index, follow">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NGO","name":"Save a Leg, Save a Life Foundation","alternateName":"SALSAL","url":"https://thesalsal.org/","logo":"https://thesalsal.org/assets/logo.png","description":"A 501(c)(3) nonprofit working to reduce preventable lower extremity amputations through community screenings, provider education, and patient advocacy.","foundingDate":"2015","taxID":"32-0467696","address":{"@type":"PostalAddress","streetAddress":"4403 5th Ave NE","addressLocality":"Bradenton","addressRegion":"FL","postalCode":"34208","addressCountry":"US"},"telephone":"+1-813-445-3857","sameAs":["https://www.facebook.com/TheSALSALorg","https://twitter.com/thesalsalorg","https://www.linkedin.com/company/the-save-a-leg-save-a-life-foundation/","https://www.instagram.com/thesalsalfoundation","https://www.youtube.com/channel/UC62XP_YydDhyI1agjEe9Rcw"]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thesalsal.org/"},{"@type":"ListItem","position":2,"name":"On-Demand Webinars","item":"https://thesalsal.org/webinars/"},{"@type":"ListItem","position":3,"name":"Nails, Corns, and Calluses, Oh My!","item":"https://thesalsal.org/webinars/nails-corns-calluses/"}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationEvent","name":"Nails, Corns, and Calluses, Oh My!","description":"A free session for clinicians on spotting at-risk foot changes early: safe nail and callus care, when to refer, and how to teach patients daily foot protection.","startDate":"2026-11-04T19:00:00-04:00","image":"https://thesalsal.org/assets/og/webinars-nails-corns-calluses.png","eventAttendanceMode":"https://schema.org/OnlineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","location":{"@type":"VirtualLocation","url":"https://thesalsal.org/webinars/nails-corns-calluses/"},"organizer":{"@type":"Organization","name":"Save a Leg, Save a Life Foundation","url":"https://thesalsal.org/"},"isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Nails, Corns, and Calluses, Oh My!","description":"A free session for clinicians on spotting at-risk foot changes early: safe nail and callus care, when to refer, and how to teach patients daily foot protection.","thumbnailUrl":"https://thesalsal.org/assets/og/webinars-nails-corns-calluses.png","uploadDate":"2026-11-04","embedUrl":"https://www.loom.com/embed/519ba0d6e1774832820cd4689fe7f020","publisher":{"@type":"Organization","name":"Save a Leg, Save a Life Foundation","logo":{"@type":"ImageObject","url":"https://thesalsal.org/assets/logo.png"}}}</script>
   <!-- SEO:END -->
   <!-- OG:START -->
   <meta property="og:type" content="website">
@@ -52,9 +52,25 @@
   .spk h3{font-size:22px;margin-bottom:2px;}
   .spk .role{font-size:12.5px;color:var(--sky);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;}
   .spk p{font-size:15.5px;color:#41546b;line-height:1.62;max-width:70ch;}
-  .spk p + p{margin-top:12px;}
   .disclaimer{font-size:12.5px;color:#5b6b7d;line-height:1.55;max-width:60ch;margin:26px auto 0;}
   @media(max-width:600px){.spk .s{grid-template-columns:66px 1fr;gap:18px;padding:26px 2px;}.spk .ph{width:66px;height:66px;}}
+
+  .spk p + p{margin-top:12px;}
+
+  /* email gate (embedded Jotform) + reveal */
+  .jfwrap{max-width:740px;margin:0 auto;}
+  .jfwrap iframe{width:1px;min-width:100%;max-width:100%;border:none;border-radius:16px;background:#fff;box-shadow:0 2px 8px rgba(28,53,87,.08),0 18px 44px rgba(16,35,59,.10);}
+  .gate-fine{font-size:12.5px;color:#5b6b7d;margin:16px auto 0;line-height:1.55;max-width:56ch;text-align:center;}
+  .gate-fallback{text-align:center;margin-top:12px;font-size:13.5px;color:var(--blue);font-weight:600;}
+  .gate-fallback a{color:var(--red);text-decoration:underline;cursor:pointer;}
+  .player-wrap{max-width:940px;margin:0 auto;}
+  .player-ok{text-align:center;font-family:'Fraunces',serif;color:#2f9e5f;font-weight:600;font-size:19px;margin-bottom:16px;}
+  .ce{max-width:640px;margin:30px auto 0;text-align:center;padding-top:28px;border-top:1px solid var(--line);}
+  .ce h3{font-size:21px;margin-bottom:8px;} .ce p{font-size:15px;color:#41546b;line-height:1.6;max-width:54ch;margin:0 auto 16px;}
+  .ce-mail{font-size:13.5px;color:#5b6b7d;margin:12px 0 0;}
+  .video{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#0b1a2c;box-shadow:0 2px 8px rgba(28,53,87,.10),0 26px 60px rgba(16,35,59,.22);}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  [hidden]{display:none!important;}
 </style>
 </head>
 <body>
@@ -231,29 +247,36 @@
     <div class="wrap">
       <div class="grid">
         <div>
-          <span class="eyebrow"><span class="dot"></span> Upcoming Webinar &middot; November 4, 2026</span>
+          <span class="eyebrow"><span class="dot"></span> On-Demand Webinar</span>
           <h1>Nails, Corns, and Calluses, <span class="phero-underline">Oh My!<svg viewBox="0 0 300 20" preserveAspectRatio="none"><path d="M4,14 C60,6 120,4 180,9 C224,12 268,10 296,6"/></svg></span></h1>
           <p class="sub">A free session for clinicians on spotting at-risk foot changes early: safe nail and callus care, when to refer, and how to teach patients daily foot protection.</p>
-          <div class="metaline">
-            <span class="mi"><span class="d"></span> Wednesday, November 4, 2026</span>
-            <span class="mi"><span class="d"></span> 7:00 PM ET &middot; 6:00 PM CT &middot; 4:00 PM PT</span>
-            <span class="mi"><span class="d"></span> Free &middot; Live on Zoom</span>
-          </div>
-          <div class="cta"><a class="btn red" href="https://us02web.zoom.us/webinar/register/4017924097136/WN_2MoVCj2tSeO26lPtObGffw" target="_blank" rel="noopener">Register free <span class="arw">&rsaquo;</span></a><a class="btn ghost" href="../">All webinars <span class="arw">&rsaquo;</span></a></div>
+          <div class="cta"><a class="btn red" href="#watch">Watch the recording</a><a class="btn ghost" href="../">All webinars <span class="arw">&rsaquo;</span></a></div>
         </div>
         <div class="hero-img wide"><img src="banner.png" alt="Nails, Corns, and Calluses, Oh My! Free webinar with Dr. Brooke Bisbee and Dr. David Alper"></div>
       </div>
     </div>
   </section>
 
-  <!-- REGISTER -->
-  <section class="band paper" id="register">
+  <!-- WATCH (gated) -->
+  <section class="band paper" id="watch">
     <div class="wrap">
-      <div class="reg reveal">
-        <div class="free">Free &middot; Live on Zoom</div>
-        <div class="when">Wednesday, November 4, 2026</div>
-        <div class="tz">7:00 PM ET &middot; 6:00 PM CT &middot; 4:00 PM PT</div>
-        <a class="btn red" href="https://us02web.zoom.us/webinar/register/4017924097136/WN_2MoVCj2tSeO26lPtObGffw" target="_blank" rel="noopener">Register free <span class="arw">&rsaquo;</span></a>
+      <div class="band-head reveal">
+        <span class="eyebrow" style="justify-content:center;"><span class="dot"></span> Free &middot; On demand</span>
+        <h2>Watch the full session</h2>
+        <p>Enter your name and email to unlock the recording. We will send you future SALSAL sessions and limb-preservation resources, and you can unsubscribe anytime.</p>
+      </div>
+      <div class="jfwrap reveal" id="gate">
+        <iframe id="JotFormIFrame-253371364681056" title="SALSAL Webinar Recording" allowtransparency="true" allow="geolocation; microphone; camera; fullscreen" src="https://form.jotform.com/253371364681056?webinar=nails-corns-calluses" frameborder="0" style="min-width:100%;max-width:100%;height:640px;border:none;" scrolling="no"></iframe>
+        <p class="gate-fine">Your details go to SALSAL only. This information is for educational purposes only and is not intended to replace professional medical advice.</p>
+      </div>
+      <div class="player-wrap reveal" id="player" hidden>
+        <div class="player-ok">You're in. Enjoy the session.</div>
+        <div class="video"><iframe src="https://www.loom.com/embed/519ba0d6e1774832820cd4689fe7f020?hideEmbedTopBar=true&amp;hide_owner=true&amp;hide_share=true&amp;hide_title=true" allowfullscreen frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Nails, Corns, and Calluses, Oh My!"></iframe></div>
+        <div class="ce">
+          <h3>Request your certificate of completion</h3>
+          <p>After watching the full recording, you can request a SALSAL certificate of completion for your records.</p>
+          <a class="btn red" href="https://docs.google.com/forms/d/e/1FAIpQLSfzbYBb-8cr1TABNuEkH_kvro7bGV9NXnDqQHV39glCeM554w/viewform" target="_blank" rel="noopener">Request your certificate <span class="arw">&rsaquo;</span></a>
+        </div>
       </div>
     </div>
   </section>
@@ -302,9 +325,9 @@
   <section class="band">
     <div class="wrap">
       <div class="closer reveal">
-        <h2>Reserve your <span class="uln">seat</span>.</h2>
-        <p>This live session is free and open to all. Register now and Zoom will send you the join link.</p>
-        <div class="cta"><a class="btn red" href="https://us02web.zoom.us/webinar/register/4017924097136/WN_2MoVCj2tSeO26lPtObGffw" target="_blank" rel="noopener">Register free</a><a class="btn ghost" href="../">All webinars <span class="arw">&rsaquo;</span></a></div>
+        <h2>Watch it <span class="uln">anytime</span>.</h2>
+        <p>This session is free to watch on demand, and you can request a certificate of completion after you finish the recording.</p>
+        <div class="cta"><a class="btn red" href="#watch">Watch the recording</a><a class="btn ghost" href="../">All webinars <span class="arw">&rsaquo;</span></a></div>
         <p class="disclaimer">This information is for educational purposes only and is not intended to replace professional medical advice. Always consult your healthcare provider.</p>
       </div>
     </div>
@@ -474,8 +497,17 @@
 <!-- FOOTER:END -->
 
 <script>
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+<script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+<script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-253371364681056']","https://form.jotform.com");</script>
+<script>
+(function(){
+  function reveal(){var g=document.getElementById('gate');if(g)g.hidden=true;var p=document.getElementById('player');if(!p)return;p.hidden=false;p.scrollIntoView({behavior:'smooth',block:'center'});}
+  window.addEventListener('message',function(e){if(!e||typeof e.origin!=='string'||e.origin.indexOf('jotform')===-1)return;var d=e.data;var s=typeof d==='string'?d:(d&&d.action?String(d.action):'');if(/submissionCompleted|submission-completed|formSubmitted|thankyou|thank-you/i.test(s))reveal();});
+  var w=document.getElementById('watchNow');if(w)w.addEventListener('click',reveal);
+})();
 </script>
 </body>
 </html>
